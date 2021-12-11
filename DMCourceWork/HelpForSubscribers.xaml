@@ -14,7 +14,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding Path=Номер}" Width="25" IsReadOnly="True"/>
                 <DataGridTextColumn Header="ФИО" Binding="{Binding Path=ФИО}" Width="*"/>
-                <DataGridTextColumn Header="Отдел" Binding="{Binding Path=Отдел}" Width="100"/>
+                <DataGridTextColumn Header="Отдел" Binding="{Binding Path=отдел}" Width="400"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

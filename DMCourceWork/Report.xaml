@@ -10,6 +10,17 @@
         <ImageBrush ImageSource="/image/LoginBack.png"/>
     </Window.Background>
     <Grid>
-        <DataGrid x:Name="Doc" Background="#99444444" IsReadOnly="True" FontSize="16"></DataGrid>
+        <DataGrid x:Name="Doc" Background="#99444444" IsReadOnly="True" FontSize="16" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=[Инвентарный номер]}" Width="25" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Название" Binding="{Binding Path=Название}" Width="*"/>
+                <DataGridTextColumn Header="Тема" Binding="{Binding Path=Тема}" Width="*"/>
+                <DataGridTextColumn Header="Кол-во" Binding="{Binding Path=Количество}" Width="60"/>
+                <DataGridTextColumn Header="Ячейка" Binding="{Binding Path=Ячейка}" Width="45"/>
+                <DataGridTextColumn Header="Полка" Binding="{Binding Path=Полка}" Width="45"/>
+                <DataGridTextColumn Header="Стеллаж" Binding="{Binding Path=Стеллаж}" Width="60"/>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Path=[Дата поступления]}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
     </Grid>
 </Window>

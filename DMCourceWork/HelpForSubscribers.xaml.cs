@@ -14,7 +14,7 @@ namespace DMCourceWork
         }
         public DataView GetTable(string Table)
         {
-            MySqlCommand cmd = new ($"SELECT * FROM {Table}", conn);
+            MySqlCommand cmd = new ("select Номер, ФИО, (select Название from отделы where Номер=абоненты.отдел) as отдел from абоненты", conn);
             cmd.ExecuteNonQuery();
             MySqlDataAdapter dA = new (cmd);
             DataTable dataTable = new (Table);

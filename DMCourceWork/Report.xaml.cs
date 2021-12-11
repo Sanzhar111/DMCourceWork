@@ -14,7 +14,12 @@ namespace DMCourceWork
         }
         public DataView GetTable(string Table)
         {
-            MySqlCommand cmd = new($"SELECT * FROM {Table}", conn);
+            MySqlCommand cmd = new($"SELECT `Инвентарный номер`, Название," +
+                $"(SELECT Название FROM Тема WHERE Номер = Документация.тема) AS Тема, " +
+                $"Количество,  Ячейка," +
+                $"(SELECT Полка FROM Ячейки WHERE Номер = Документация.ячейка) AS Полка," +
+                $"(SELECT Стеллаж FROM Полки WHERE Номер = (SELECT Полка FROM Ячейки WHERE Номер = Документация.ячейка)) AS Стеллаж," +
+                $"`Дата поступления` FROM документация; ", conn);
             cmd.ExecuteNonQuery();
             MySqlDataAdapter dA = new(cmd);
             DataTable dataTable = new(Table);
