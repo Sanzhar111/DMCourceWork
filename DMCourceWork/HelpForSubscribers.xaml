@@ -1,0 +1,21 @@
+﻿<Window x:Class="DMCourceWork.HelpForSubscribers"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DMCourceWork"
+        mc:Ignorable="d"
+        Title="HelpForSubscribers" Height="550" Width="900">
+    <Window.Background>
+        <ImageBrush ImageSource="/image/LoginBack.png"/>
+    </Window.Background>
+    <Grid>
+        <DataGrid x:Name="Abonents" IsReadOnly="True" AutoGenerateColumns="False" Background="#99595959">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Path=Номер}" Width="25" IsReadOnly="True"/>
+                <DataGridTextColumn Header="ФИО" Binding="{Binding Path=ФИО}" Width="*"/>
+                <DataGridTextColumn Header="Отдел" Binding="{Binding Path=Отдел}" Width="100"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
